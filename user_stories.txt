@@ -1,0 +1,31 @@
+UserStory 1:
+Implement a rest endpoint to provide notify
+This rest end point will be able to handle all the types of notifications.
+This end point will not actually send the notification but will process  and transform the request and notify the services which are responsible for sending message.
+This will work asynchronously but will provide a sync response indicating that if the request was successfully processed.
+
+UserStory2:
+Implement a RabbitMq consumer to send emails
+This will send emails
+All the smtp servers will be configurable
+
+
+UserStory 3:
+Implement a RabbitMQ  consumer to send slack messages
+
+
+Future Backlog:
+
+
+UserStory 4: 
+Implement a priority messaging system for all kinds of messages
+The email sent from the consumer are all of equal priority. Assign the priority to these email as  per the sender.
+This priority will be configurable
+For each priority a different message sender (e.g. different smtp service provider for email) can be used.
+
+
+UserStory5:
+Implement a retry mechanism for the messages which are failed
+For the messages which have delivery failures, implement a retry for them
+If we need to do retry for a message or not should be configurable.
+Also the number of retry will be 1. So in total there will be 2 attempts to send a message with retry. 
